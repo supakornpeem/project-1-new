@@ -1,0 +1,279 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link href="https://fonts.googleapis.com/css?family=Kanit&display=swap" rel="stylesheet">
+        <meta charset="UTF-8">
+        <script src="https://kit.fontawesome.com/4f08e4d3db.js" crossorigin="anonymous"></script>
+        <STYLE TYPE="TEXT/CSS">
+            A:link {
+                text-decoration:none;
+            }
+            A:visited {
+                text-decoration:none;
+            }
+        </STYLE>
+
+
+
+        <style>
+            div {
+                font-family: 'Kanit', sans-serif;
+            }
+            input {
+                font-family: 'Kanit', sans-serif;
+            }
+            body {
+                background-image: url('BG.png'); 
+                background-repeat: no-repeat;
+                background-attachment: fixed; 
+                background-size: cover;
+                color: #C3002F;
+            }
+            .button {
+                background-color: #FF6600;
+                border: none;
+                padding: 10px 25px;
+                text-align: center;
+                font-size: 16px;
+                cursor: pointer;
+            }
+        </style>
+        <style> 
+            input[type=text] {
+                width: 100%;
+                box-sizing: border-box;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                font-size: 16px;
+                background-color: white;
+                /* background-image: url('search.png'); */
+                background-position: 10px 10px; 
+                background-repeat: no-repeat;
+                padding: 5px 10px 5px 15px;
+            }
+        </style>
+        <style>
+            .BG {
+                background-color: #FFFFFF;
+                color: white;
+                padding: 10px;
+            } 
+        </style>
+        <style>
+            .tu {
+                color: #C3002F ; 
+            }
+        </style>
+        <style>
+            table {
+                width:95%;
+                margin-left:2.5%
+            }
+            table, th, td {
+                border: 1px solid whitesmoke;
+                border-collapse: collapse;
+            }
+            th, td {
+                padding: 15px;
+                text-align: left;
+            }
+            table#myTable tr:nth-child(even) {
+                background-color: #ff9933;
+            }
+            table#myTable tr:nth-child(odd) {
+                background-color: #ff9933;
+            }
+            table#myTable th {
+                background-color: #ff0000;
+                color: white;
+            }   
+        </style>
+    </head>
+    <body link="#C3002F" vlink="#C3002F">
+
+        <div style="
+
+             background-image:url('panal.png') ;
+             opacity: 0.7;
+             margin-left:250px; 
+             margin-right:250px;
+             top: 0px;
+             height:1300px;
+             ">
+
+            <img src ="TU_LOGO.png" style="margin: auto auto;  display: block; width: 1000px; height: 520;">
+
+            <div style="background-color: #F9ECC4;
+                 opacity: 1;
+                 margin-left:70px; 
+                 width: 250px;
+                 height: 180px;
+                 float: left;
+                 ">
+                <div>
+                    <p >
+                        <a href="template.html">
+                            <i class="fas fa-home" style="margin-left: 18px; margin-top: 8px;"> หน้าแรก </i>
+                        </a>
+                        <br>
+                        <a href="loginpage.html">
+                            <i class="fas fa-unlock" style="margin-left: 20px; margin-top: 8px;"> เข้าสู่ระบบ</i> 
+                        </a>
+                        <br>
+
+                        <a href="addLate.html">
+                            <i class="fas fa-plus" style="margin-left: 20px; margin-top: 8px;"> เพิ่มวิชา(ล่าช้า)</i>
+                        </a>
+
+                        <br>
+                        <a href="template.html"> 
+                            <i class="fas fa-list-ul" style="margin-left: 20px; margin-top: 8px;" formaction=> รายการ</i>
+                        </a>
+
+                        <br>
+                        <a href="https://www.facebook.com/natipong.boonchu">
+                            <i class="fas fa-phone-alt" style="margin-left: 20px; margin-top: 8px;"> ติดต่อเรา</i>
+                        </a>
+
+                        <br>
+                    </p>
+
+
+                </div>
+            </div>
+
+
+
+            <div style="background-color: #F9ECC4;
+                 margin-left:70px;
+                 width: 700px;
+                 height: 950px;
+                 float: left;
+
+                 ">
+
+                <h1 style="
+                    margin-top: 15px;
+                    margin-left: 30px;">
+                    <p>แบบฟอร์ม เพิ่มวิชา (ล่าช้า)</p></h1>
+
+                <div style="margin-left:30px;  width: 300px; height: 0px;">
+
+
+                    <input name="last" type="text"
+                           required 
+
+                           pattern="[A-Za-z][A-Za-z0-9]*" maxlength="5" 
+                           placeholder="  ค้นหารายวิชา">
+
+
+                </div>
+                <div style="
+                     margin-top: -1px;
+                     margin-left: 335px;">
+                    <button class="button" onclick="displayDataToTable()"
+                            style="font-family: 'Kanit', sans-serif;
+                            color: #C3002F;">ค้นหา</button>
+                    
+                </div>
+                <div style="
+                     margin-top: 70px;
+                     margin-left: 15px;">
+                    <table id="myTable">
+                        <thead>
+                            <tr>
+                                <th>ลบ</th>
+                                <th>รหัสวิชา</th> 
+                                <th>ชื่อวิชา</th>
+                                <th>จดทะเบียน</th>
+                                <th>หน่วยกิจ</th> 
+                                <th>Sec/Gr</th>
+                                <th>ศูนย์</th>
+                            </tr>
+                        </thead>
+                        <tr>
+
+                            <td>
+                                <i class="fas fa-minus" style="margin-left: 3px;"></i>
+                            </td>
+                            <td>CS233</td>
+                            <td>INTRODUCTION TO SOFTWARE ENGINEERING</td>
+                            <td>Credit</td>
+                            <td>3.0</td>
+                            <td>650001</td>
+                            <td>ศูนย์รังสิต</td>
+
+                        </tr>
+
+                    </table>
+                    <br>
+                    <br>
+                    <div style="margin-left: 21.5px;">
+                        <p class="w3-medium">ชื่อนักศึกษา xxxxxxx xxxxxxx</p>   
+                        <p class="w3-medium">เลขทะเบียน xxxxxxxxxxx</p>  
+                        <p class="w3-medium">คณะ xxxxxxxxxxxxxxxxxx</p>  
+                        <p class="w3-medium">สาขา xxxxxxxxxx</p>  
+                        <p class="w3-medium">เหตุผล</p>  
+                    </div>
+                    <div style="  width: 500px; height: 5px; margin-left: 21.5px;">
+                        <input class="w3-input w3-border" type="text"
+                               required 
+                               placeholder=" กรอกเหตุผล"
+                               >    
+                    </div>
+                    <br>
+                    <br>
+                    <div style="margin-left: 21.5px;">
+                        <p class="w3-large">รายการทั้งหมด :</p>
+                        <p class="w3-medium">ยอดทำรายการทั้งหมด</p>
+                    </div>
+
+                    <button class="button" style="
+                            margin-top : 50px;
+                            margin-left : 290px;
+                            font-family: 'Kanit', sans-serif;
+                            color: #C3002F;"
+                            formaction="file:///Users/netipong/Desktop/CS_SE_HTML_v.1/template.html">ยืนยัน</button>
+                </div>
+
+            </div>
+
+
+    </body>
+</html>
+
+<script>
+    var elements = [{"A": "-", "B": "CS233",
+            "C": "INTRODUCTION TO SOFTWARE ENGINEERING",
+            "D": "Credit", "E": "3.0",
+            "F": 650001, "G": "ศูนย์รังสิต"}];
+
+    function displayDataToTable() {
+        for (var i = 0; i < elements.length; i++) {
+            let table = document.getElementById("myTable");
+            // Create an empty <tr> element and add it to the last position of the table:
+            let row = table.insertRow(-1);
+
+            // Insert new cells (<td> elements) at the 1st and 2nd position of the "new" <tr> element:
+            let cell1 = row.insertCell(0);
+            let cell2 = row.insertCell(1);
+            let cell3 = row.insertCell(2);
+            let cell4 = row.insertCell(3);
+            let cell5 = row.insertCell(4);
+            let cell6 = row.insertCell(5);
+            let cell7 = row.insertCell(6);
+
+            cell1.innerHTML = elements[i].A;
+            cell2.innerHTML = elements[i].B;
+            cell3.innerHTML = elements[i].C;
+            cell4.innerHTML = elements[i].D;
+            cell5.innerHTML = elements[i].E;
+            cell6.innerHTML = elements[i].F;
+            cell7.innerHTML = elements[i].G;
+        }
+
+    }
+</script>
